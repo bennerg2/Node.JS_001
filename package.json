@@ -1,0 +1,25 @@
+{
+  "name": "Node.js_001",
+  "version": "1.0.0",
+  "description": "Starting with a simple server using the Node.js environment and the Express framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennerg2/Node.js_001.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bennerg2/Node.js_001/issues"
+  },
+  "homepage": "https://github.com/bennerg2/Node.js_001#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "express": "^4.17.1",
+    "joi": "^14.3.1"
+  }
+}
