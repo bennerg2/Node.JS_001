@@ -33,12 +33,11 @@ The terminal responded with a default string response I provided, "Server is lis
 Then, I defined more routes or endpoints that can be accessed with http requests.
 
 For example,
-```
-In http://someDomain.com/api/resources, the "/api/resources" will serve as one of my route endpoints.
-```
+
+> in http://someDomain.com/`api/resources`, the `/api/resources` will serve as one of my route endpoints.
 
 #### nodemon
-In order to save myself the trouble of stopping and restarting your server every time I made a change to "index.js", I used nodemon. I installed this package with the following command:
+In order to save myself the trouble of stopping and restarting your server every time I made a change to `index.js`, I used nodemon. I installed this package with the following command:
 ```
 npm i -g nodemon
 ```
@@ -50,7 +49,7 @@ Instead of using `node index.js`, I initialized my server with the command:
 nodemon index.js
 ```
 
-From this point on, nodemon watched for changes inside the directory where my "index.js" file was and restarted automatically whenever I saved.
+From this point on, nodemon watched for changes inside the directory where my `index.js` file was and restarted automatically whenever I saved.
 
 #### Port Configuration
 Port assignment is automatic for most hostmachines. I simulated this by defining my port outside of the program by using a command, `export PORT=5000` (which works well for unix-like machines, even MacOS, but you'll want to use `set PORT=5000` on Windows). These are only temporary variables that are only bound for the duration of a session, so if I were to close the command prompt or terminal, these variables would not persist and be available for my next session. To make variables permanent, I would need to access my ~/.bashrc or ~/.bash_profile documents on *nix machines or use the `setx` command or edit the registry on Windows.
