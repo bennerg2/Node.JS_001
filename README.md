@@ -1,29 +1,67 @@
 # Node.js_001
-Starting with a simple server using the Node.js environment and the Express framework.
+The purpose of this project was to familiarize myself with the Node.js environment and the Express framework by creating a simple server that supports CRUDL operations.
 
-This server supports http requests for some basic CRUD operations.
+An example of a basic endpoint for an http GET operation that returns a list of resources:
+
+![Basic endpoint for an http GET operation that returns a list of resources](/images/RouteEndpointExample.png)
 
 ## Tracing My Steps
-After creating the directory, I initialized npm with `npm init --yes`.
-The `--yes` or `-y` flag will automatically accept all the defaults, so you're not prompted to customize the initialization.
+In this section, I'll highlight some of the steps I took along with interesting things that I learned throughout the process.
 
-Then, I installed the Express framework with `npm i express`.
+#### Initialize npm
+After creating the directory, I initialized npm with this command:
+```
+npm init --yes
+```
+> The `--yes` or `-y` flag will automatically accept all the defaults, so you're not prompted to customize the initialization.
 
-Then, I started working on the "index.js" file, where I've left comments in the code to explain what I did.
+#### Installed Express
+Then, I installed the Express framework with this command:
+```
+npm i express
+```
 
-After including an express object .get and .listen function in index.js, you can perform a one time startup by entering `node index.js` into the commandline. The terminal should respond with your listening message. For example, "Server is listening on port 3000...". And you can navigate to `localhost:#portNumber` in a web browser, and see the result of your callback function in the .get function.
+After including an express object, I used the .get and .listen functions provided by the framework to provide the scaffolding for my server.
 
-You can then define more routes or endpoints that can be accessed with http requests. For example, `http://someDomain.com/api/resources`. The `/api/resources` will serve as one of my route endpoints.
+I started the server by entering this command:
+```
+node index.js
+```
 
-In order to save yourself the trouble of stopping and restarting your server every time you make a change to "index.js", you can install an npm package called nodemon with `npm i -g nodemon`. The `-g` flag will install this package globally, so we can access it anywhere on the machine we're working on. Since, we're using the global flag, you'll want to prepend your command with `sudo` to grant npm access to make changes in your /usr/local/lib directory.
+The terminal responded with a default string response I provided, "Server is listening on port 3000...", and I navigated to `localhost:#portNumber` in a web browser to see the result of my callback function in the .get function, which simply printed "Hello world!!" to the screen.
 
-With **nodemon**, you can initialize your server once with the command `nodemon index.js`, and it will watch for changes inside the directory where your "index.js" file is and restart automatically.
+Then, I defined more routes or endpoints that can be accessed with http requests.
 
-Ports will dynamically be assigned based on the hostmachine preferences. You can simulate this by using a command, like `set PORT=5000` on Windows or `export PORT=5000` on unix-like machines (including MacOS). These are only temporary variables for your session, so if you close the command prompt or terminal, these variables will not be persistent for you to use on your next session. To make variables permanent, you'll need to access your ~/.bashrc or ~/.bash_profile documents on *nix machines or use the `setx` command or edit the registry on Windows.
+For example,
+```
+In http://someDomain.com/api/resources, the "/api/resources" will serve as one of my route endpoints.
+```
 
-For POST/PUT validation, I installed Joi with  `npm i @hapi/joi`. This allows me to define a shape or schema for what kind of input my server should be receiving from the client. With Joi, I can easily validate input to prevent any errors with my data.
+#### nodemon
+In order to save myself the trouble of stopping and restarting your server every time I made a change to "index.js", I used nodemon. I installed this package with the following command:
+```
+npm i -g nodemon
+```
 
-I created endpoints for the basic CRUD operations and refactored a bit for readability.
+The `-g` flag will install this package globally, so I can access it anywhere on this particular machine. Since, I used the global flag, I prepended my command with `sudo` to grant npm access to make changes to my /usr/local/lib directory.
+
+Instead of using `node index.js`, I initialized my server with the command:
+```
+nodemon index.js
+```
+
+From this point on, nodemon watched for changes inside the directory where my "index.js" file was and restarted automatically whenever I saved.
+
+#### Port Configuration
+Port assignment is automatic for most hostmachines. I simulated this by defining my port outside of the program by using a command, `export PORT=5000` (which works well for unix-like machines, even MacOS, but you'll want to use `set PORT=5000` on Windows). These are only temporary variables that are only bound for the duration of a session, so if I were to close the command prompt or terminal, these variables would not persist and be available for my next session. To make variables permanent, I would need to access my ~/.bashrc or ~/.bash_profile documents on *nix machines or use the `setx` command or edit the registry on Windows.
+
+#### Joi
+For POST/PUT validation, I installed Joi with the following command:
+```
+npm i @hapi/joi
+```
+
+This allowed me to define a shape (or schema) for the kind of input my server should be receiving from the client. With Joi, I validated test data against the schema to ensure that my server could handle errors.
 
 ---------------------------------------
 Thanks for the [tutorial](https://www.youtube.com/watch?v=pKd0Rpw7O48), Mosh!
