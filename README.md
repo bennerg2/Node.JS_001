@@ -32,9 +32,7 @@ The terminal responded with a default string response I provided, "Server is lis
 
 Then, I defined more routes or endpoints that can be accessed with http requests.
 
-For example,
-
-> in http://someDomain.com/`api/resources`, the `/api/resources` will serve as one of my route endpoints.
+> For example, in http://someDomain.com/api/resources, the `/api/resources` will serve as one of my route endpoints.
 
 #### nodemon
 In order to save myself the trouble of stopping and restarting your server every time I made a change to `index.js`, I used nodemon. I installed this package with the following command:
