@@ -19,7 +19,7 @@
   "homepage": "https://github.com/bennerg2/Node.js_001#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "joi": "^14.3.1"
   }
 }
